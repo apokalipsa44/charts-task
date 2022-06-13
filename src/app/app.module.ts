@@ -6,17 +6,20 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgChartsModule } from 'ng2-charts';
 import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+   
   ],
   imports: [
     MatButtonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgChartsModule
+    NgChartsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
