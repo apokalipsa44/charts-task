@@ -1,4 +1,4 @@
-<div fxLayout="column" fxLayoutGap="15px">
+<div fxLayout="column" fxLayoutGap="20px">
     <div>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sed eligendi dolorem veritatis suscipit
             fugit, in,
@@ -8,20 +8,27 @@
             nesciunt, accusantium alias adipisci necessitatibus nemo veniam totam rem doloremque dolore. Labore, aliquam
             quidem.
         </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde ratione labore quo eius dolore!</p>
     </div>
     <div>
         <app-users-data-placeholder></app-users-data-placeholder>
     </div>
-    <div>
+    <div fxLayoutAlign="center">
         <button mat-raised-button color="primary" (click)="fetchUsers()">Fetch users!</button>
     </div>
-    <div>
+    <div [ngClass]="{'background': isBackgrounVisible}">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis vitae ab incidunt minima natus nihil
             nobis dolor,
             ad commodi sequi dignissimos voluptatum quis, tenetur, dolorum animi consequuntur? Blanditiis praesentium ex
             quos
             eveniet deleniti doloribus tempora omnis est possimus, veniam nemo exercitationem quasi voluptate culpa
             temporibus
-            porro repudiandae earum? Amet, eveniet!</p>
+            porro repudiandae earum? Amet, eveniet!
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis similique vel amet? Ut provident explicabo
+            at, nesciunt natus, dolor fugit adipisci architecto doloremque, porro alias nulla accusamus hic quaerat
+            blanditiis expedita iusto dolorem!
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio tenetur consequatur mollitia!</p>
     </div>
 </div>

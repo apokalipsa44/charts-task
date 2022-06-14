@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="usersList else loading">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z0" style="width:100%">
         <ng-container matColumnDef="firstName">
             <th mat-header-cell *matHeaderCellDef> firstName </th>
@@ -29,3 +29,7 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 </div>
+
+<ng-template #loading>
+    <ngx-skeleton-loader count="5" appearance="line"></ngx-skeleton-loader>
+</ng-template>
