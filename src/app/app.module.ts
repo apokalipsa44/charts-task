@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgChartsModule } from 'ng2-charts';
 import { MyLineChartComponent } from './components/my-line-chart/my-line-chart.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { MyLineChartComponent } from './components/my-line-chart/my-line-chart.c
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    NgChartsModule
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

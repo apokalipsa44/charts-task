@@ -11,6 +11,7 @@ import { MainViewComponent } from './main-view-component/main-view.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 
 @NgModule({
@@ -28,7 +29,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MainViewRoutingModule,
     MatButtonModule,
     MatTableModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    NgxSkeletonLoaderModule.forRoot({ animation: 'pulse', loadingText: 'Fetching users data form API...' }),
+
 
   ]
 })

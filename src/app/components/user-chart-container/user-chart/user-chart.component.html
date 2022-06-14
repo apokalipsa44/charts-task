@@ -1,2 +1,16 @@
-<p>user-chart works!</p>
+<div *ngIf="usersList else loading">
+    <p>user-chart works!</p>
+</div>
 
+<ng-template #loading>
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10">
+        <div fxFlex="70">
+            <ngx-skeleton-loader count="4" appearance="circle"
+                [theme]="{ 'border-radius': '5px', height: '8em' , width: '12em' }"></ngx-skeleton-loader>
+        </div>
+        <div fxFlex="70">
+            <ngx-skeleton-loader count="4" appearance="circle"
+                [theme]="{ 'border-radius': '5px', height: '8em' , width: '12em' }"></ngx-skeleton-loader>
+        </div>
+    </div>
+</ng-template>
