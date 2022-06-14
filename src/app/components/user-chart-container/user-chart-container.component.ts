@@ -26,8 +26,5 @@ export class UserChartContainerComponent implements OnChanges {
       }))
   }
 
-  ngOnInit(): void {
-
-  }
 
 }

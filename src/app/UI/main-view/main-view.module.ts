@@ -9,6 +9,7 @@ import { UserChartComponent } from 'src/app/components/user-chart-container/user
 import { UsersTableComponent } from 'src/app/components/users-table-container/users-table/users-table.component';
 import { MainViewComponent } from './main-view-component/main-view.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 
@@ -26,6 +27,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     MainViewRoutingModule,
     MatButtonModule,
+    MatTableModule,
     FlexLayoutModule
 
   ]
