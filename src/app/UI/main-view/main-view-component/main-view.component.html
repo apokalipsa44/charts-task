@@ -1,4 +1,4 @@
-<div fxLayout="column">
+<div fxLayout="column" fxLayoutGap="15px">
     <div>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sed eligendi dolorem veritatis suscipit
             fugit, in,
@@ -9,8 +9,11 @@
             quidem.
         </p>
     </div>
-    <div fxFlex="60" style="border: 1px solid #ccc">
+    <div>
         <app-users-data-placeholder></app-users-data-placeholder>
+    </div>
+    <div>
+        <button mat-raised-button color="primary" (click)="fetchUsers()">Fetch users!</button>
     </div>
     <div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis vitae ab incidunt minima natus nihil

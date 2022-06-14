@@ -12,4 +12,8 @@ export class MainViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  fetchUsers(): void {
+console.log("😜");
+  }
+
 }
