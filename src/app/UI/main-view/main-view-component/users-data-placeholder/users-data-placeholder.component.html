@@ -1,2 +1,2 @@
-<app-user-chart-container [fetchUsersOprions]="fetchUsersOprionsChart"></app-user-chart-container>
-<app-users-table-container [fetchUsersOprions]="fetchUsersOprionsTable"></app-users-table-container>
+<app-user-chart-container [fetchUsersOprions]="fetchUsersOprionsChart" [fetchData]="fetchUsersBtnClicked$|async"></app-user-chart-container>
+<app-users-table-container [fetchUsersOprions]="fetchUsersOprionsTable" [fetchData]="fetchUsersBtnClicked$|async"></app-users-table-container>

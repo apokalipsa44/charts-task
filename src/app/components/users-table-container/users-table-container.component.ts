@@ -13,6 +13,7 @@ import { RandomUserService } from 'src/app/services/random-user.service';
 })
 export class UsersTableContainerComponent implements OnChanges {
   @Input() fetchUsersOprions!: FetchUserOprions | null;
+  @Input() fetchData!: boolean | null;
   users$!: Observable<User[]>
 
   constructor(private userService: RandomUserService) { }
@@ -20,11 +21,11 @@ export class UsersTableContainerComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('this.fetchUsersOprions: ', this.fetchUsersOprions);
-    if (this.fetchUsersOprions) this.users$ = this.userService.fetchUsers(this.fetchUsersOprions)
+    if (this.fetchUsersOprions && this.fetchData) this.users$ = this.userService.fetchUsers(this.fetchUsersOprions)
       .pipe(map(data => {
         if (!data.results) throw new Error('No results from Users API')
         return data.results
       }))
-      .pipe(map(users=>orderBy(users, ['dob.age'], ['desc']).slice(0,10)))
+      .pipe(map(users => orderBy(users, ['dob.age'], ['desc']).slice(0, 10)))
   }
 }

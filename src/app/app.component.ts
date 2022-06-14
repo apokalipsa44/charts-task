@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { distinctUntilChanged } from 'rxjs/operators';
 
@@ -8,14 +9,13 @@ import { distinctUntilChanged } from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  isBackgrounVisible = false
-
+export class AppComponent implements OnInit, OnDestroy {
+  routerEventsSubscription$!: Subscription
   constructor(private router: Router) {
   }
 
   ngOnInit(): void {
-    this.router.events
+    this.routerEventsSubscription$ = this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),
         distinctUntilChanged()
@@ -23,7 +23,11 @@ export class AppComponent implements OnInit {
         let counter: number = (sessionStorage.getItem("refreshCounter")) ? parseInt(sessionStorage.getItem("refreshCounter")!) : 0;
         counter++;
         sessionStorage.setItem("refreshCounter", counter?.toString());
-        if (counter % 5 === 0) this.isBackgrounVisible = true;
       })
   }
+
+  ngOnDestroy(): void {
+    this.routerEventsSubscription$?.unsubscribe();
+  }
+
 }
