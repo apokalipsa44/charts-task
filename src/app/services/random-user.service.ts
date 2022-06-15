@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { FetchUserOprions } from '../models/fetchUsersOprions.model';
-import { User } from '../models/user.model';
 import { UserApiResponse } from '../models/userApiResponse.model';
 
 @Injectable({
