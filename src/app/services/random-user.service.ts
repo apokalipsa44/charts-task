@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { FetchUserOprions } from '../models/fetchUsersOprions.model';
-import { User } from '../models/user.model';
 import { UserApiResponse } from '../models/userApiResponse.model';
 
 @Injectable({
@@ -10,8 +9,8 @@ import { UserApiResponse } from '../models/userApiResponse.model';
 })
 export class RandomUserService {
   private url: string = 'https://randomuser.me/api/';
-  private fetchDataBtnEvent: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  public fetchDataBtnEvent$: Observable<boolean> = this.fetchDataBtnEvent.asObservable()
+  private fetchDataBtnEvent: BehaviorSubject<any> = new BehaviorSubject<any>(false);
+  public fetchDataBtnEvent$: Observable<any> = this.fetchDataBtnEvent.asObservable()
 
   constructor(private http: HttpClient) { }
 
@@ -20,7 +19,8 @@ export class RandomUserService {
   }
 
   handleFetchUsersBtnClick(){
-    this.fetchDataBtnEvent.next(true);
+    const fetch = {fetch: true}
+    this.fetchDataBtnEvent.next(fetch);
   }
 
 

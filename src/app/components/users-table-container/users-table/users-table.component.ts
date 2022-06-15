@@ -1,10 +1,11 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-users-table',
   templateUrl: './users-table.component.html',
-  styleUrls: ['./users-table.component.scss']
+  styleUrls: ['./users-table.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UsersTableComponent implements OnChanges {
   @Input() usersList!: User[] | null;

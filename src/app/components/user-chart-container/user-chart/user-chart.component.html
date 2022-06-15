@@ -1,16 +1,14 @@
-<div *ngIf="usersList else loading">
-    <p>user-chart works!</p>
+<div *ngIf="usersAgeCount else loading">
+    <div fxLayout="row" fxLayoutAlign="center start" style="margin-left: 6em; margin-right: 6em;">
+        <canvas style="width:100%;" baseChart [data]="salesData" [type]="'bar'" [options]="chartOptions">
+        </canvas>
+    </div>
+
 </div>
 
 <ng-template #loading>
-    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10">
-        <div fxFlex="70">
-            <ngx-skeleton-loader count="4" appearance="circle"
-                [theme]="{ 'border-radius': '5px', height: '8em' , width: '12em' }"></ngx-skeleton-loader>
-        </div>
-        <div fxFlex="70">
-            <ngx-skeleton-loader count="4" appearance="circle"
-                [theme]="{ 'border-radius': '5px', height: '8em' , width: '12em' }"></ngx-skeleton-loader>
-        </div>
+    <div style="margin-left: 6em; margin-right: 6em;">
+        <ngx-skeleton-loader count="2" appearance="line" [theme]="{ 'border-radius': '5px', 'height': '8em'  }">
+        </ngx-skeleton-loader>
     </div>
 </ng-template>

@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     MatTableModule,
     FlexLayoutModule,
     NgxSkeletonLoaderModule.forRoot({ animation: 'pulse', loadingText: 'Fetching users data form API...' }),
-
+    NgChartsModule
 
   ]
 })
