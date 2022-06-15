@@ -31,5 +31,7 @@
 </div>
 
 <ng-template #loading>
-    <ngx-skeleton-loader count="5" appearance="line"></ngx-skeleton-loader>
+    <div>
+        <ngx-skeleton-loader count="4" appearance="line"  [theme]="{ 'border-radius': '2px', 'height': '2.5em'  }"></ngx-skeleton-loader>
+    </div>
 </ng-template>
