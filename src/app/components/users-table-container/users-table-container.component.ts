@@ -20,7 +20,6 @@ export class UsersTableContainerComponent implements OnChanges {
 
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('this.fetchUsersOprions: ', this.fetchUsersOprions);
     if (this.fetchUsersOprions && this.fetchData) this.users$ = this.userService.fetchUsers(this.fetchUsersOprions)
       .pipe(map(data => {
         if (!data.results) throw new Error('No results from Users API')

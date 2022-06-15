@@ -19,7 +19,6 @@ export class UserChartContainerComponent implements OnChanges {
 
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('this.fetchUsersOprions: ', this.fetchUsersOprions);
     if (this.fetchUsersOprions && this.fetchData) this.usersAgeCount$ = this.userService.fetchUsers(this.fetchUsersOprions)
       .pipe(map(data => {
         if (!data.results) throw new Error('No results from Users API')
@@ -46,8 +45,8 @@ export class UserChartContainerComponent implements OnChanges {
       if (user.dob?.age > 51 && user.dob?.age < 60) count5160.push(user);
       if (user.dob?.age < 61) count61plus.push(user);
     })
-    const sorted = [count20.length, count2130.length, count3140.length, count4150.length, count5160.length, count61plus.length]
-    return sorted
+
+    return [count20.length, count2130.length, count3140.length, count4150.length, count5160.length, count61plus.length]
   }
 
 

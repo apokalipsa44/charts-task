@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ChartData, ChartOptions } from 'chart.js';
-import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-user-chart',
@@ -27,7 +26,6 @@ export class UserChartComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.usersAgeCount) {
-      console.log(this.usersAgeCount)
       this.salesData = {
         labels: ['<20', '21-30', '31-40', '41-50', '51-60', '61+'],
         datasets: [
@@ -36,9 +34,6 @@ export class UserChartComponent implements OnChanges {
         ],
       };
     }
-  }
-
-  ngOnInit(): void {
   }
 
 }
