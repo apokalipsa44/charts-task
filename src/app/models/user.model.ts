@@ -31,7 +31,7 @@ export interface User {
   },
   dob?: {
     date?: string,
-    age?: string
+    age?: number
   },
   registered?: {
     date?: string,

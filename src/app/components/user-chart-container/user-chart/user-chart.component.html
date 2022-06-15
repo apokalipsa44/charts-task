@@ -1,5 +1,15 @@
-<div *ngIf="usersList else loading">
+<div *ngIf="usersAgeCount else loading">
     <p>user-chart works!</p>
+    <div fxFlex="70">
+        <canvas style="width:100%; height: 100%;aspect-ratio:16/6"
+        baseChart
+        [data]="salesData"
+        [type]="'bar'"
+        [options]="chartOptions"
+      >
+      </canvas>
+    </div>
+    
 </div>
 
 <ng-template #loading>

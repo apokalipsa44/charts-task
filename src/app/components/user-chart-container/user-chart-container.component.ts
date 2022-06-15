@@ -13,18 +13,39 @@ import { map, tap } from 'rxjs/operators';
 export class UserChartContainerComponent implements OnChanges {
   @Input() fetchUsersOprions!: FetchUserOprions | null;
   @Input() fetchData!: boolean | null;
-  users$!: Observable<User[]>
+  usersAgeCount$!: Observable<number[]>
 
   constructor(private userService: RandomUserService) { }
 
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('this.fetchUsersOprions: ', this.fetchUsersOprions);
-    if (this.fetchUsersOprions && this.fetchData) this.users$ = this.userService.fetchUsers(this.fetchUsersOprions)
+    if (this.fetchUsersOprions && this.fetchData) this.usersAgeCount$ = this.userService.fetchUsers(this.fetchUsersOprions)
       .pipe(map(data => {
         if (!data.results) throw new Error('No results from Users API')
         return data.results
       }))
+      .pipe(
+        map(users => {
+          let count20 = [];
+          let count2130 = [];
+          let count3140 = [];
+          let count4150 = [];
+          let count5160 = [];
+          let count61plus = [];
+          users.forEach(user => {
+            if (!user.dob?.age) return;
+            if (user.dob?.age <= 20) count20.push(user);
+            if (user.dob?.age > 21 && user.dob?.age < 30) count2130.push(user);
+            if (user.dob?.age > 31 && user.dob?.age < 40) count3140.push(user);
+            if (user.dob?.age > 41 && user.dob?.age < 50) count4150.push(user);
+            if (user.dob?.age > 51 && user.dob?.age < 60) count5160.push(user);
+            if (user.dob?.age < 61) count61plus.push(user);
+          })
+          const sorted = [count20.length, count2130.length, count3140.length, count4150.length, count5160.length, count61plus.length]
+          return sorted
+        })
+      )
   }
 
 
